@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.cards {
+  background-image: url("/images/nfts/card.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mesh {
+  background: linear-gradient(
+    125deg,
+    rgba(5, 2, 10, 1) 50%,
+    rgba(67, 28, 84, 1) 100%
+  );
+  height: 100vh;
+}
+
+.purple-gradient {
+  background: linear-gradient(
+    89.84deg,
+    #505bda 1.44%,
+    #6752e1 20.14%,
+    #8446eb 58.06%,
+    #985af2 84.04%,
+    #bf81ff 99.45%
+  );
+}
+
+.font-gradient {
+  background: linear-gradient(
+    89.84deg,
+    #505bda 1.44%,
+    #6752e1 20.14%,
+    #8446eb 58.06%,
+    #985af2 84.04%,
+    #bf81ff 99.45%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.box {
+  position: relative;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 1px;
+  background: linear-gradient(
+    89.84deg,
+    #505bda 1.44%,
+    #6752e1 20.14%,
+    #8446eb 58.06%,
+    #985af2 84.04%,
+    #bf81ff 99.45%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@layer base {
+  button {
+    @apply text-white hover:text-gray font-medium  py-[4px] px-[15px] lg:px-[38px] lg:py-[8px] text-[12px] lg:text-[16px] rounded-md;
+  }
+
+  nav {
+    z-index: 10;
+  }
+}
+
+h1 {
+  @apply tracking-tight font-bold text-[25px]  lg:text-[40px] xl:text-[60px];
+}
+
+h3 {
+  @apply font-black  text-[30px] md:text-[50px] tracking-wider;
+}
+
+h2 {
+  @apply text-[16px] md:text-[20px] font-bold;
+}
+h6 {
+  @apply font-bold text-[24px] xl:text-[30px];
+}
+
+li {
+  @apply md:ml-8 text-[10px] lg:text-[16px] md:my-0 my-7 text-white hover:text-gray font-medium;
+}
+
+p {
+  @apply text-[12px] lg:text-[16px] text-gray lg:w-3/5 mt-2 mb-5 lg:mb-10 text-center lg:text-start;
+}
+
+* {
+  color: white;
+  font-family: Poppins;
+}
+
+.red {
+  color: #f00606;
+}
+
+.green {
+  color: #11d811;
+}
