@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { useRouter } from "next/router";
-import Link from "next/link";
+
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { Brands } from "../data/contextProvider";
 
@@ -29,7 +29,7 @@ const HeroSection = () => {
     <div id="home" className="mesh h-full">
       {/* Navbar */}
       <nav className="container mx-auto w-full left-0  sticky top-0 ">
-        <div className="md:flex items-center justify-between px-10 lg:px-28 py-4 lg:py-8">
+        <div className="md:flex items-center justify-start space-x-10 px-10 lg:px-28 py-4 lg:py-8">
           <h6 className="cursor-pointer">
             CRYPTO <span className="font-gradient">CLOUD </span>
           </h6>
