@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Coins from "../components/Coins";
 import axios from "axios";
+import Navbar from "../components/Navbar";
 
 const Search = () => {
   const [coins, setCoins] = useState([]);
@@ -26,34 +27,37 @@ const Search = () => {
   };
 
   return (
-    <div className="flex flex-col items-center bg-blackbg ">
-      <h1 className="mt-20 font-semibold text-[25px] md:text-[30px] lg:text-[45px]">
-        Popular Cryptocurrencies
-      </h1>
+    <>
+      <Navbar />
+      <div className="flex flex-col items-center bg-blackbg h-screen">
+        <h1 className="mt-12 font-semibold text-[25px] md:text-[30px] lg:text-[45px]">
+          Popular Cryptocurrencies
+        </h1>
 
-      <form>
-        <input
-          className=" mt-3 mb-10 md:mt-5 md:mb-16 bg-blackbg  p-3 md:p-4 w-[300px] md:w-[450px] rounded-full placeholder-gray  border  focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-purple text-[15px]"
-          type="text"
-          onChange={handleChange}
-          placeholder="Search a currency"
-        />
-      </form>
-      {filteredCoins.map((coin) => {
-        return (
-          <Coins
-            key={coin.id}
-            name={coin.name}
-            price={coin.current_price}
-            symbol={coin.symbol}
-            marketcap={coin.total_volume}
-            volume={coin.market_cap}
-            image={coin.image}
-            priceChange={coin.price_change_percentage_24h}
+        <form>
+          <input
+            className=" mt-3 mb-10 md:mt-5 md:mb-16 bg-blackbg  p-3 md:p-4 w-[300px] md:w-[450px] rounded-full placeholder-gray  border  focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-purple text-[15px]"
+            type="text"
+            onChange={handleChange}
+            placeholder="Search a currency"
           />
-        );
-      })}
-    </div>
+        </form>
+        {filteredCoins.map((coin) => {
+          return (
+            <Coins
+              key={coin.id}
+              name={coin.name}
+              price={coin.current_price}
+              symbol={coin.symbol}
+              marketcap={coin.total_volume}
+              volume={coin.market_cap}
+              image={coin.image}
+              priceChange={coin.price_change_percentage_24h}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 };
 

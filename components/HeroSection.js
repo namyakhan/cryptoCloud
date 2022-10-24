@@ -3,22 +3,19 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import { Links, Brands } from "../data/contextProvider";
+import { Brands } from "../data/contextProvider";
 
 const HeroSection = () => {
   let [open, setOpen] = useState(false);
-  const [showResults, setShowResults] = useState(false);
 
   const router = useRouter();
   const login = (e) => {
     e.preventDefault();
-
     router.push("/search");
   };
 
   const arts = (e) => {
     e.preventDefault();
-
     router.push("/marketplace");
   };
   let Links = [
@@ -27,24 +24,6 @@ const HeroSection = () => {
     { name: "Cryptocurrency", link: "/search" },
     { name: "Marketplace", link: "/marketplace" },
   ];
-
-  const Window = () => (
-    <ul
-      className={`mesh absolute  bg-white md:hidden pb-12 z-[-1] left-0 w-full   pl-9 `}
-    >
-      {Links.map((link) => (
-        <li key={link.name}>
-          <Link href={link.link} to={link.link}>
-            <a>{link.name}</a>
-          </Link>
-        </li>
-      ))}
-
-      <button onClick={login} className="purple-gradient">
-        Launch App
-      </button>
-    </ul>
-  );
 
   return (
     <div id="home" className="mesh h-full">
@@ -58,7 +37,6 @@ const HeroSection = () => {
           <div
             onClick={() => {
               setOpen(!open);
-              setShowResults(true);
             }}
             className=" absolute right-8 top-6 cursor-pointer md:hidden"
           >
@@ -67,20 +45,23 @@ const HeroSection = () => {
             ) : (
               <XMarkIcon className="h-7" />
             )}
-            {showResults ? <Window /> : null}
           </div>
 
-          <ul className="hidden md:flex md:flex-row md:items-center md:space-x-5 lg:space-x-8 md:pb-0 pb-12 ">
+          <ul
+            className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-blackbg md:z-auto z-[100] left-0 w-full  md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in  ${
+              open ? "top-18 " : "top-[-490px]"
+            }`}
+          >
             {Links.map((link) => (
-              <li key={link.name}>
-                <Link href={link.link} to={link.link}>
-                  <a>{link.name}</a>
-                </Link>
+              <li key={link.name} className="md:ml-8 md:my-0 my-7">
+                <a
+                  href={link.link}
+                  className="text-gray-800 hover:text-gray-400 duration-500"
+                >
+                  {link.name}
+                </a>
               </li>
             ))}
-            <button onClick={login} className="purple-gradient">
-              Launch App
-            </button>
           </ul>
         </div>
       </nav>

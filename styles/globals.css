@@ -91,7 +91,7 @@ h6 {
 }
 
 li {
-  @apply md:ml-8 text-[10px] lg:text-[16px] md:my-0 my-7 text-white hover:text-gray font-medium;
+  @apply md:ml-8 text-[13px] lg:text-[16px] md:my-0 my-7 text-white hover:text-gray font-medium;
 }
 
 p {
