@@ -27,9 +27,9 @@ const Search = () => {
   };
 
   return (
-    <>
+    <div className=" h-screen">
       <Navbar />
-      <div className="flex flex-col items-center bg-blackbg h-screen">
+      <div className="flex flex-col items-center bg-blackbg">
         <h1 className="mt-12 font-semibold text-[25px] md:text-[30px] lg:text-[45px]">
           Popular Cryptocurrencies
         </h1>
@@ -57,7 +57,7 @@ const Search = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
