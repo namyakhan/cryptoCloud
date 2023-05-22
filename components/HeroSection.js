@@ -28,7 +28,7 @@ const HeroSection = () => {
   return (
     <div id="home" className="mesh h-full">
       {/* Navbar */}
-      <nav className="container mx-auto w-full left-0  sticky top-0 ">
+      <nav className="container mx-auto w-full left-0  fixed top-0 lg:px-28">
         <div className="md:flex items-center justify-start space-x-10 px-10 lg:px-28 py-4 lg:py-8">
           <h6 className="cursor-pointer">
             CRYPTO <span className="font-gradient">CLOUD </span>
@@ -67,7 +67,7 @@ const HeroSection = () => {
       </nav>
 
       {/* Hero Section */}
-      <div className=" bg-stars bg-repeat container mx-auto lg:py-10 px-10 lg:px-28 flex flex-col-reverse lg:flex-row items-center">
+      <div className=" bg-stars bg-repeat container mx-auto lg:py-28 px-10 lg:px-28 flex flex-col-reverse lg:flex-row items-center">
         {/* left section */}
         <div className="flex flex-col text-center lg:text-start pt-3">
           <div className="leading-tight ">
@@ -92,7 +92,7 @@ const HeroSection = () => {
         <img
           src="images/hero.svg"
           alt="hero"
-          className="w-[200px] lg:w-[250px] xl:w-[380px]"
+          className="w-[200px] lg:w-[250px] xl:w-[380px] pt-20 lg:pt-0"
         />
       </div>
       {/* Brands */}
