@@ -10,6 +10,10 @@
   background-size: cover;
 }
 
+/* *{
+  border: 1px solid red;
+} */
+
 .mesh {
   background: linear-gradient(
     125deg,
